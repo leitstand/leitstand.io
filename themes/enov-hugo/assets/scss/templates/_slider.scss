@@ -1,10 +1,12 @@
 .slider{
-  background: url("../images/bg/slider-1.jpg") no-repeat;
+  background: linear-gradient(to right, #573dc8 0%,#79d7c1 100%); ;
   background-size: cover;
   background-position: 10% 0%;
   padding:220px 0 200px 0;
   position: relative;
-  @extend .overly-2;
+  overflow: hidden;
+  @extend .overly-wireframe;
+
     h1{
       font-size: 56px;
       line-height: 70px;
@@ -21,6 +23,25 @@
       font-size: 15px;
     }
 
+    .slider-content{
+      position: relative;
+      z-index: 1;
+    }
+
+    .slider-parralax{
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+
+      svg, img{
+        position: absolute;
+        top: 10%;
+        right: -31%;
+        z-index: 0;
+      }
+    }
 }
 
 

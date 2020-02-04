@@ -54,7 +54,7 @@ input[type="tel"] {
   display: inline-block;
   padding: 1rem 2rem;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 500px;
   font-size: 14px;
   line-height: 14px;
   font-weight: 600;
@@ -79,7 +79,7 @@ input[type="tel"] {
 }
 
 .btn-main {
-  background: $primary-color;
+  background: $colorLightBlue;
   color: $light;
   @include transition (all, 0.2s, ease);
 
@@ -109,8 +109,7 @@ input[type="tel"] {
   color: $light;
 
   &:hover {
-    border-color: $primary-color;
-    background: $primary-color;
+    background: rgba($black, 0.2);
     color: $light;
   }
 }
@@ -145,7 +144,7 @@ input[type="tel"] {
 }
 
 .btn-round-full {
-  border-radius: 50px;
+  border-radius: 500px;
 }
 
 
@@ -195,7 +194,6 @@ input[type="tel"] {
   }
 }
 
-
 .overly-2 {
   position: relative;
 
@@ -226,6 +224,22 @@ input[type="tel"] {
     height: 100%;
     background: $primary-color;
     opacity: .95;
+  }
+}
+
+.overly-wireframe {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
   }
 }
 
@@ -299,7 +313,7 @@ a:focus {
 // Background
 
 .bg-gray {
-  background: $secondary-color;
+  background: $colorColdGrey;
 }
 
 .bg-black {
@@ -308,7 +322,7 @@ a:focus {
 
 
 .bg-gradient {
-  background-image: linear-gradient(145deg, rgba(19, 177, 205, 0.95) 0%, rgba(152, 119, 234, 0.95) 100%);
+  background-image: linear-gradient(145deg, rgba($colorLightBlue, 0.95) 0%, rgba($colorDarkBlue, 0.95) 100%);
   background-repeat: repeat-x;
 }
 

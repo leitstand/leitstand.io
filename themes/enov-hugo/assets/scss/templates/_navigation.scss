@@ -13,6 +13,8 @@
     font-family: $secondary-font;
     text-transform: capitalize;
     color: #f5f5f5;
+    padding-left: 10px;
+    padding-right: 10px;
   font-weight: 600;
   letter-spacing: 0.3px;
   font-size: 18px;
@@ -22,9 +24,10 @@
         -ms-transition: all .25s ease;
          -o-transition: all .25s ease;
             transition: all .25s ease;
-    
+
     &:hover, &:focus{
-      color: $primary-color;
+      background-color: rgba(0,0,0,0.1);
+      border-radius: 4px;
     }
   }
 
@@ -70,6 +73,7 @@
     display: inline-block;
     padding: 6px 15px;
     font-size: 13px;
+    background-color: $colorDarkBlue;
 }
 
 .rounded-btn{
@@ -78,6 +82,10 @@
 #navbar .navbar-brand{
   color: $light;
   font-weight: 700;
+}
+.navbar-brand-wrapper{
+  position: relative;
+  z-index: 1;
 }
 .dropdown{
   position: relative;
@@ -144,20 +152,17 @@ ul.dropdown-menu li {
 
 .nav-top{
    position: fixed;
-  padding: 1em 30px;
+  padding: 0 30px;
   top: 0;
   width: 100%;
- background-image: -moz-linear-gradient(rgb(46, 50, 56) 98px, rgba(0, 0, 0, 0) 98px);
- background-image: -o-linear-gradient(rgb(46, 50, 56) 98px, rgba(0, 0, 0, 0) 98px);
- background-image: -webkit-linear-gradient(rgb(46, 50, 56) 98px, rgba(0, 0, 0, 0) 98px);
- background-image: -ms-linear-gradient(top, #2e3238 98px, transparent 98px);
- background-image: linear-gradient(rgb(46, 50, 56) 98px, rgba(0, 0, 0, 0) 98px);
+ background: $colorColdGrey;
   -webkit-transition: .0s all ease;
   -o-transition: .0s all ease;
   transition: .0s all ease;
   -webkit-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
 }
 .nav-top.awake {
     -webkit-transition: .3s all ease;
@@ -177,11 +182,16 @@ ul.dropdown-menu li {
     transform: translateY(-80%);
 }
 .navbar-collapse{
-   text-align: left;
+  text-align: left;
+
+  .navbar-inner{
+     display: flex;
+     width: 100%;
+  }
 }
-.navbar-collapse.collapse.show{
-  background: $black;
-  padding: 20px 0px;
+.navbar-collapse.collapse.show, .navbar-collapse.collapsing{
+  background: rgba($colorColdGrey, 0.97);
+  padding: 0px 0px;
 }
 .navbar-collapse.collapse.show{
   .dropdown-menu{
@@ -225,7 +235,7 @@ a.bg-primary:hover{
 
 @include mobile-xs{
   .navbar-collapse{
-     text-align: center;
+     text-align: left;
      padding: 20px;
   }
    .header-top .header-top-info a {
@@ -250,7 +260,7 @@ a.bg-primary:hover{
 
 @include tablet{
   .navbar-collapse{
-     text-align: center;
+     text-align: left;
      padding: 20px;
   }
    .navbar-toggler{
@@ -260,5 +270,20 @@ a.bg-primary:hover{
     display: none;
     width: 100%;
     text-align: center;
+  }
+}
+
+@include desktop{
+  .navbar-collapse{
+     padding: 0px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+
+     .navbar-inner{
+        display: block;
+        padding-top: 75px;
+     }
   }
 }

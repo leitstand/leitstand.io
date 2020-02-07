@@ -14,7 +14,7 @@
           <h1 class="animated fadeInUp mb-5 text-white">{{ .title | markdownify }}</h1>
           {{ if .button_solid.enable }}
           {{ with .button_solid }}
-          <a href="{{ .link | absLangURL }}" class="btn btn-main animated fadeInUp mr-1">{{ .label }}</a>
+          <a href="{{ .link | relLangURL }}" class="btn btn-main animated fadeInUp mr-1">{{ .label }}</a>
           {{ end }}
           {{ end }}
 
@@ -149,7 +149,7 @@
 
 <!--  Section Services Start -->
 {{ if $data.homepage.service.enable }}
-<section class="section service bg-light">
+<section id="service" class="section service bg-light">
   <div class="container">
     {{ with $data.homepage.service }}
     <div class="row justify-content-center">
@@ -181,7 +181,7 @@
 
 {{ if $data.homepage.services.enable }}
 <!--  Section Services Start -->
-<section id="service" class="section service">
+<section id="resources" class="section service">
   <div class="container">
     <div class="row justify-content-center">
       {{ range $index, $element:= $data.homepage.services.services_item }}
@@ -280,7 +280,7 @@
 
 <!-- clients -->
 {{ if $data.about.clients_logo.enable }}
-<section class="container">
+<section id="members" class="container">
   <div class="section border-top">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
@@ -291,8 +291,8 @@
       </div>
     </div>
     <div class="row">
-      {{ range .Site.Params.clients_logo }}
-      <div class="col-lg-3 col-md-4 col-sm-4">
+      {{ range .Site.Params.clients }}
+      <div class="col-lg-3 col-md-4 col-sm-4 d-flex align-items-center">
         <img src="{{ .logo | absURL }}" alt="logo" class="img-fluid w-100">
       </div>
       {{ end }}
@@ -303,7 +303,7 @@
 <!-- /clients -->
 
 
-<section class="contact-form-wrap section bg-gray">
+<section id="contact" class="contact-form-wrap section bg-gray">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">

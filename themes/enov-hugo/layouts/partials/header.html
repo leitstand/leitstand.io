@@ -1,5 +1,5 @@
 <!-- Header Start -->
-<header class="navigation">
+<header id="header" class="navigation">
   {{ if .Site.Params.top_header }}
   <!-- top header -->
   <div class="header-top d-none d-md-block d-lg-block">
@@ -29,7 +29,7 @@
   <nav class="navbar navbar-expand-lg px-0  main-nav" id="navbar">
     <div class="container">
       <div class="col-12 col-lg-4 d-flex align-items-center navbar-brand-wrapper">
-        <a class="navbar-brand col ml-md-n5 ml-n3 px-0 px-md-3" href="{{ .Site.BaseURL | relLangURL }}">
+        <a class="navbar-brand col ml-md-n5 ml-n3 px-0 px-md-3" href="{{ .Site.Params.homeURL | relLangURL }}">
           {{ if .Site.Params.logo_svg }}
             {{ .Site.Params.logo | absURL }}
           {{ else }}
@@ -45,7 +45,7 @@
         <div class="navbar-inner container px-0">
           <ul class="navbar-nav ml-auto text-lg-left my-3 my-lg-0">
             <li class="nav-item active"><a class="nav-link"
-                href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Home }}</a></li>
+                href="{{ .Site.Params.homeURL | relLangURL }}">{{ .Site.Params.Home }}</a></li>
             {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
             <li class="nav-item dropdown">
@@ -61,7 +61,7 @@
             </li>
             {{ else }}
             <li class="nav-item">
-              <a class="nav-link" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+              <a class="nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
             </li>
             {{ end }}
             {{ end }}

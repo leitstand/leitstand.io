@@ -1,44 +1,38 @@
 <!-- footer Start -->
-<footer class="footer section">
+<footer class="footer py-3">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-3 ml-auto col-sm-6">
-        <div class="widget">
-          <a class="d-block mb-4" href="{{ .Site.BaseURL | relLangURL }}">
-            <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="img-fluid">
+    <div class="row align-items-end">
+      <div class="col-lg-4 ml-auto col-sm-6">
+        <div class=" footer-menu mt-2">
+          <a class="d-block" href="{{ .Site.Params.homeURL | relLangURL }}">
+            {{ if .Site.Params.logo_svg }}
+              {{ .Site.Params.logo | absURL }}
+            {{ else }}
+              <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="img-fluid">
+            {{ end }}
           </a>
-          <a href="mailto:{{ .Site.Params.email }}" class="text-white">{{ .Site.Params.email }}</a>
-          <p class="mt-4 mb-3">{{ .Site.Params.Address }}</p>
-          <a href="tel:{{ .Site.Params.phone }}"><span class="text-white h4">{{ .Site.Params.phone }}</span></a>
+          <a class="ml-4" href="#">Leitstand Project Licensing Information</a>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="widget text-white">
-          <h4 class="text-capitalize mb-4 text-white">{{ i18n "company"}}</h4>
-          <ul class="list-unstyled footer-menu lh-35">
-            {{ range .Site.Menus.main }}
-            {{ if not .HasChildren }}
-            <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-            {{ end }}
-            {{ end }}
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-6 col-sm-6">
-        <div class="widget">
-          <h4 class="text-capitalize mb-4 text-white">{{ i18n "quick_links"}}</h4>
-          <ul class="list-unstyled footer-menu lh-35">
-            {{ range .Site.Menus.footer }}
-            <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+      <div class="col-lg-5 col-md-6 col-sm-6">
+        <div class=" text-white row align-items-baseline">
+          <p class="text-capitalize mb-0 col-auto text-white"></p>
+          <ul class="list-unstyled col footer-menu row lh-35 mb-0">
+            {{ range .Site.Params.clients }}
+            <li class="col-6">
+            <a href="{{ .link | absURL }}">
+              {{ .title }}
+            </a>
+            </li>
             {{ end }}
           </ul>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="widget">
-          <h4 class="text-capitalize mb-4 text-white">{{ i18n "follow_us" }}</h4>
-          <ul class="list-unstyled footer-socials">
+        <div class="">
+          <p class="text-capitalize mb-1 text-white">For technical Questions visit us on:</p>
+          <ul class="list-unstyled footer-socials mb-0">
             {{ range .Site.Params.social }}
             <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }} mr-2 text-muted"></i>{{ .name }}</a></li>
             {{ end }}
@@ -51,7 +45,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
           <div class="copyright">
-            <p>{{ .Site.Params.copyright | markdownify }}</p>
+            <p>{{ .Site.Params.copyright | safeHTML }}</p>
           </div>
         </div>
       </div>

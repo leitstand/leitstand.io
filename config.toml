@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "http://examplesite.org"
+baseURL = ""
 title = "Enov Hugo | Html5 Business template"
 theme = "enov-hugo"
 # post pagination
@@ -54,44 +54,30 @@ link = "plugins/google-map/map.js"
 
 # main menu
 [[menu.main]]
-name = "Resources"
-URL = "resources"
+name = "Benefits"
+URL = "#service"
+weight = 1
+
+# main menu
+[[menu.main]]
+name = "Tools"
+URL = "#resources"
 weight = 2
 
 [[menu.main]]
 name = "Members"
-URL = "members"
+URL = "#members"
 weight = 3
 
 [[menu.main]]
 name = "Contact Us"
-URL = "contact"
-weight = 4
-
-# footer menu
-[[menu.footer]]
-name = "service"
-URL = "service"
-weight = 1
-
-[[menu.footer]]
-name = "about"
-URL = "about"
-weight = 2
-
-[[menu.footer]]
-name = "blog"
-URL = "blog"
-weight = 3
-
-[[menu.footer]]
-name = "pricing"
-URL = "pricing"
+URL = "#contact"
 weight = 4
 
 
 #################### default parameters ################################
 [params]
+homeURL = "#header"
 logo_svg = true
 logo = '<svg id="Layer_1" height="65px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1313 254"><defs><style>.cls-1{fill:currentcolor;}.cls-2{fill:url(#linear-gradient);}.cls-3{fill:url(#linear-gradient-2);}</style><linearGradient id="linear-gradient" x1="13.51" y1="82.73" x2="338.66" y2="96.87" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#90fbce"/><stop offset="1" stop-color="#4180a0"/></linearGradient><linearGradient id="linear-gradient-2" x1="13.51" y1="10.73" x2="338.66" y2="24.87" gradientTransform="matrix(1, 0, 0, -1, 0, 166.98)" xlink:href="#linear-gradient"/></defs><title>Leitstand_logo</title><path class="cls-1" d="M394.63,147.81v20.8H339.26V74.08h21.61v73.73Z"/><path class="cls-1" d="M490.51,147.81v20.8H431.09V74.08h58.74v20.8H452.69v15.66h33.76v20.53H452.69v16.74Z"/><path class="cls-1" d="M551.27,74.08v94.53h-21.6V74.08Z"/><path class="cls-1" d="M658,94.88H633.64v73.73H612V94.88H587.73V74.08H658Z"/><path class="cls-1" d="M691.84,157.81l5-10.54c7,6.35,19,10.94,31.19,10.94,16.35,0,23.37-6.35,23.37-14.58,0-23.1-57.26-8.51-57.26-43.62,0-14.59,11.34-27,36.19-27,11.07,0,22.55,3,30.38,8.37l-4.45,10.81a48.81,48.81,0,0,0-25.93-7.7c-16.07,0-23,6.75-23,15,0,23.09,57.26,8.64,57.26,43.35,0,14.45-11.61,26.87-36.6,26.87C713.58,169.69,699.41,164.83,691.84,157.81Z"/><path class="cls-1" d="M825.39,85.83H793V74.08h78.18V85.83H838.76v82.78H825.39Z"/><path class="cls-1" d="M965,145H914.79l-10.4,23.63H890.48l42.81-94.53h13.37l42.94,94.53H975.42Zm-4.73-10.81L939.91,87.85l-20.39,46.32Z"/><path class="cls-1" d="M1105.19,74.08v94.53h-11.07L1037.4,98.12v70.49h-13.5V74.08H1035l56.72,70.49V74.08Z"/><path class="cls-1" d="M1143.68,74.08h39.84c30.38,0,51,19.18,51,47.26s-20.66,47.27-51,47.27h-39.84Zm39,82.78c23.37,0,38.36-14.31,38.36-35.52s-15-35.51-38.36-35.51h-25.52v71Z"/><path class="cls-2" d="M152.8,72.2V115H95.06V66A507.43,507.43,0,0,0,152.8,72.2Zm78.47,0V115H288.7V66A507.33,507.33,0,0,1,231.27,72.18Zm-39.39,1.07c-9.77,0-19.31-.19-28.56-.56V115h57.43V72.68C211.41,73.05,201.76,73.25,191.88,73.25Z"/><path class="cls-3" d="M152.8,166.78V124H95.06v49A507.43,507.43,0,0,1,152.8,166.78Zm78.47,0V124H288.7v49A507.33,507.33,0,0,0,231.27,166.8Zm-39.39-1.07c-9.77,0-19.31.19-28.56.56V124h57.43v42.3C211.41,165.93,201.76,165.73,191.88,165.73Z"/></svg>'
 # top header
@@ -117,7 +103,7 @@ preloader = "" # use jpg, png, svg or gif format.
 
 # Navigation button
 [params.navigation_button]
-enable = true
+enable = false
 label = "Sign Up"
 link = "contact"
 
@@ -130,34 +116,27 @@ map_longitude = "-0.1622023"
 map_marker = "images/marker.png"
 
 ######################### Clients logo ################################
-[[params.clients_logo]]
-logo = "images/about/key-vision1.png"
+[[params.clients]]
+logo = "images/Telekom_Logo_2013.svg"
+title = "Deutsche Telekom AG"
+link = "https://www.telekom.com/en"
 
-[[params.clients_logo]]
-logo = "images/about/key-vision2.png"
+[[params.clients]]
+logo = "images/rtbrick.svg"
+title = "RtBrick"
+link = "https://www.rtbrick.com/"
 
-[[params.clients_logo]]
-logo = "images/about/key-vision3.png"
+[[params.clients]]
+logo = "images/ewe-logo.svg"
+title = "EWE AG"
+link = "#"
 
-[[params.clients_logo]]
-logo = "images/about/key-vision4.png"
+[[params.clients]]
+logo = "images/Logo_Reply-01.svg"
+title = "Reply AG"
+link = "#"
 
 #################### social icon ######################################
-[[params.social]]
-name = "Facebook"
-icon = "ti-facebook"
-link = "#"
-
-[[params.social]]
-name = "Twitter"
-icon = "ti-twitter-alt"
-link = "#"
-
-[[params.social]]
-name = "Vimeo"
-icon = "ti-vimeo-alt"
-link = "#"
-
 [[params.social]]
 name = "Github"
 icon = "ti-github"
@@ -171,4 +150,4 @@ contentDir = "content/english"
 weight = 1
 home = "Home"
 # copyright
-copyright = "Copyright &copy; 2020 a hugo theme by [themefisher](https://themefisher.com)"
+copyright = "Reply ©​​ 2020​ - <a href=''>Data privacy information</a>"

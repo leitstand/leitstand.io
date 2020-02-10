@@ -57,10 +57,20 @@
 {{ with $data.homepage.banner_cta }}
 <section class="mt--6 position-relative slider-cta">
   <div class="container">
-    <div class="row align-items-center bg-gradient p-4 p-sm-5 rounded">
-      <div class="col-lg-9">
+    <div class="row align-items-center bg-blue p-4 p-sm-5 rounded">
+      <div class="col-lg-12">
         <h3 class="mb-2 text-white">{{ .title | markdownify }}</h3>
         <p class="text-white">{{ .content | markdownify }}</p>
+
+        <!--  Section quote Start -->
+        {{ if $data.homepage.quote.enable }}
+            <blockquote>
+              <p class="text-white">
+                {{$data.homepage.quote.text}}
+              </p>
+            </blockquote>
+        {{ end }}
+        <!-- quote End -->
       </div>
       {{ if .button.enable }}
       {{ with .button }}
@@ -76,19 +86,6 @@
 {{ end }}
 <!-- Slider End -->
 
-<!--  Section quote Start -->
-{{ if $data.homepage.quote.enable }}
-<section id="quote" class="section quote">
-  <div class="container">
-    <blockquote>
-      <p>
-        {{$data.homepage.quote.text}}
-      </p>
-    </blockquote>
-  </div>
-</section>
-{{ end }}
-<!-- quote End -->
 
 <!-- Section feature Start -->
 {{ if $data.homepage.feature.enable }}
@@ -147,6 +144,30 @@
 {{ end }}
 <!-- section Counter End  -->
 
+{{ if $data.homepage.services.enable }}
+<!--  Section Services Start -->
+<section id="resources" class="section service">
+  <div class="container">
+    <div class="row justify-content-center">
+      {{ range $index, $element:= $data.homepage.services.services_item }}
+      {{ $delay := mul $index 100 }}
+      <div class="col-lg-4 col-md-6">
+        <div class="d-flex mb-5" data-aos="fade-up" data-aos-delay="{{ $delay }}">
+          <i class="{{ if not .icon_svg }}{{ .icon }}{{ end }} text-lg">{{ if .icon_svg }}{{ .icon | absURL}}{{ end }}</i>
+          <div class="ml-3">
+            <h4 class="mb-3">{{ .title | markdownify }}</h4>
+            <p>{{ .content | markdownify }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!--  Section Services End -->
+
 <!--  Section Services Start -->
 {{ if $data.homepage.service.enable }}
 <section id="service" class="section service bg-light">
@@ -179,29 +200,6 @@
 {{ end }}
 <!--  Section Services End -->
 
-{{ if $data.homepage.services.enable }}
-<!--  Section Services Start -->
-<section id="resources" class="section service">
-  <div class="container">
-    <div class="row justify-content-center">
-      {{ range $index, $element:= $data.homepage.services.services_item }}
-      {{ $delay := mul $index 100 }}
-      <div class="col-lg-4 col-md-6">
-        <div class="d-flex mb-5" data-aos="fade-up" data-aos-delay="{{ $delay }}">
-          <i class="{{ if not .icon_svg }}{{ .icon }}{{ end }} text-lg">{{ if .icon_svg }}{{ .icon | absURL}}{{ end }}</i>
-          <div class="ml-5">
-            <h4 class="mb-3">{{ .title | markdownify }}</h4>
-            <p>{{ .content | markdownify }}</p>
-          </div>
-        </div>
-      </div>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
-<!--  Section Services End -->
 
 <!-- Section Pricing Start -->
 {{ if $data.homepage.pricing.enable }}
@@ -281,7 +279,7 @@
 <!-- clients -->
 {{ if $data.about.clients_logo.enable }}
 <section id="members" class="container">
-  <div class="section border-top">
+  <div class="section">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
         <div class="section-title">
@@ -292,7 +290,7 @@
     </div>
     <div class="row">
       {{ range .Site.Params.clients }}
-      <div class="col-lg-3 col-md-4 col-sm-4 d-flex align-items-center">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-6 mx-auto p-5 d-flex align-items-center">
         <img src="{{ .logo | absURL }}" alt="logo" class="img-fluid w-100">
       </div>
       {{ end }}

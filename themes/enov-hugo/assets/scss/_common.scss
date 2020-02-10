@@ -1,3 +1,6 @@
+img, svg{
+  max-width: 100%;
+}
 /* preloader */
 .preloader {
   position: fixed;
@@ -314,6 +317,10 @@ a:focus {
 
 .bg-gray {
   background: $colorColdGrey;
+}
+
+.bg-blue {
+  background: $colorBlue;
 }
 
 .bg-black {

@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 baseURL = ""
-title = "Enov Hugo | Html5 Business template"
+title = "Leitstand | OSS for disaggregated networks"
 theme = "enov-hugo"
 # post pagination
 paginate = "6"
@@ -56,13 +56,13 @@ link = "plugins/google-map/map.js"
 [[menu.main]]
 name = "Benefits"
 URL = "#service"
-weight = 1
+weight = 2
 
 # main menu
 [[menu.main]]
 name = "Tools"
 URL = "#resources"
-weight = 2
+weight = 1
 
 [[menu.main]]
 name = "Members"
@@ -109,7 +109,7 @@ link = "contact"
 
 # google map
 [params.map]
-enable = true
+enable = false
 gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
 map_latitude = "51.5223477"
 map_longitude = "-0.1622023"

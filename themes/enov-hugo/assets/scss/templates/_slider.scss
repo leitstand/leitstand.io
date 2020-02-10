@@ -53,6 +53,17 @@
   margin-top: -4rem;
 }
 
+.slider-cta{
+
+  blockquote{
+    margin: 30px 0 !important;
+
+    &:before{
+      background-color: $light;
+    }
+  }
+}
+
 .slider-cta .btn:hover{
   border-color: $light;
   background: transparent;

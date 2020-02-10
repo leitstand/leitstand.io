@@ -27,8 +27,8 @@
   {{ end }}
 
   <nav class="navbar navbar-expand-lg px-0  main-nav" id="navbar">
-    <div class="container">
-      <div class="col-12 col-lg-4 d-flex align-items-center navbar-brand-wrapper">
+    <div class="container d-flex">
+      <div class="col col-lg-4 d-flex align-items-center navbar-brand-wrapper">
         <a class="navbar-brand col ml-md-n5 ml-n3 px-0 px-md-3" href="{{ .Site.Params.homeURL | relLangURL }}">
           {{ if .Site.Params.logo_svg }}
             {{ .Site.Params.logo | absURL }}
@@ -36,10 +36,6 @@
             <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="img-fluid">
           {{ end }}
         </a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigation"
-          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="ti-menu"></span>
-        </button>
       </div>
       <div class="collapse navbar-collapse" id="navigation">
         <div class="navbar-inner container px-0">
@@ -97,6 +93,13 @@
           </div>
           {{ end }}
         </div>
+      </div>
+      <div class="header-icons col-auto">
+        <a href="#" class="text-white lead mr-2 mr-lg-0 d-flex align-items-center github-link"><i class="ti-github"></i></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="ti-menu"></span>
+        </button>
       </div>
     </div>
   </nav>

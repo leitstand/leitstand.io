@@ -229,4 +229,44 @@ $('a[href*="#"]')
     }
   });
 
+  /* apply only to forms with the action pointing to Basin */
+  $('form[action^="https://usebasin.com"]').each(function (i, el) {
+      var form = $(el);
+      form.submit(function (e) {
+        e.preventDefault();
+        console.log("xxXxx");
+          /* stop the form from submitting */
+          form = $(e.target);
+          console.log(form);
+          return;
+          /* get the form's action parameter and add ".json" to the end */
+          action = form.attr('action') + '.json';
+          /* submit the form via ajax */
+          $.ajax({
+              url: action,
+              method: "POST",
+              data: form.serialize(),
+              dataType: "json",
+              success: function (data) {
+                  if (data.success) {
+                      /* successful submission - hide the form and show the success message */
+                      parent = $(form.parent());
+                      parent.children('.form-success').css('display', 'block');
+                  } else {
+                      /* failed submission - log the output to the console and show the failure message */
+                      console.log(data);
+                      parent.find('.form-error').css('display', 'block');
+                  }
+              },
+              error: function () {
+                  /* failed submission - show the failure message */
+                  parent.find('.form-error').css('display', 'block');
+              }
+          });
+      });
+  });
 })(jQuery);
+
+function onContactSubmit(token) {
+  $('#contact form').submit();
+}

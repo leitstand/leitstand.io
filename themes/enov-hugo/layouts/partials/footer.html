@@ -11,7 +11,7 @@
               <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="img-fluid">
             {{ end }}
           </a>
-          <a class="ml-4" href="#">Leitstand Project Licensing Information</a>
+          <a class="ml-4" href="https://raw.githubusercontent.com/leitstand/leitstand/master/LICENSE">Leitstand Project Licensing Information</a>
         </div>
       </div>
 
@@ -62,6 +62,10 @@
 {{ "<!-- Google Map API -->" | safeHTML }}
 {{ if .Site.Params.map.enable }}
 <script src="{{ .Site.Params.map.gmap_api | safeURL }}"></script>
+{{ end }}
+
+{{ if .Site.Params.captcha.enable }}
+<script src="{{ .Site.Params.captcha.captcha_api | safeURL }}" async defer></script>
 {{ end }}
 
 {{ "<!-- JS Plugins -->" | safeHTML }}

@@ -84,13 +84,13 @@ logo = '<svg id="Layer_1" height="65px" data-name="Layer 1" xmlns="http://www.w3
 top_header = false
 # Meta data
 description = "This is meta description"
-author = "Themefisher"
+author = ""
 # contact info
-address = "9567 Turner Trace Apt. BC C3G8A4"
-phone = "+211234565523"
-email = "info@enov.com"
+address = ""
+phone = ""
+email = ""
 # contact form action
-contact_form_action = "#" # contact form works with https://formspree.io
+contact_form_action = "https://usebasin.com/f/81db9efb0aa7" # contact form works with https://formspree.io
 # Google Analitycs
 google_analitycs_id = "" # your id
 # search
@@ -114,6 +114,12 @@ gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqO
 map_latitude = "51.5223477"
 map_longitude = "-0.1622023"
 map_marker = "images/marker.png"
+
+# google recaptcha
+[params.captcha]
+enable = true
+captcha_api = "https://www.google.com/recaptcha/api.js"
+site_key = "6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy"
 
 ######################### Clients logo ################################
 [[params.clients]]
@@ -150,4 +156,4 @@ contentDir = "content/english"
 weight = 1
 home = "Home"
 # copyright
-copyright = "Reply ©​​ 2020​ - <a href=''>Data privacy information</a>"
+copyright = "RtBrick Inc ©​​ 2020​ - <a class='text-light' href='/privacy-policy'>Data privacy information</a> - <a class='text-light' href='/terms-of-service'>Terms of Service</a>"

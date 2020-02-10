@@ -33,9 +33,7 @@
         <div class="">
           <p class="text-capitalize mb-1 text-white">For technical Questions visit us on:</p>
           <ul class="list-unstyled footer-socials mb-0">
-            {{ range .Site.Params.social }}
-            <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }} mr-2 text-muted"></i>{{ .name }}</a></li>
-            {{ end }}
+            <li><a href="{{ .Site.Params.Github.link | safeURL }}"><i class="{{ .Site.Params.Github.icon }} mr-2 text-muted"></i>{{ .Site.Params.Github.name }}</a></li>
           </ul>
         </div>
       </div>

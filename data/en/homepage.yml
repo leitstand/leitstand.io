@@ -14,7 +14,7 @@ banner:
   button_border:
     enable : true
     label : "Github"
-    link : "service"
+    link : "https://github.com/leitstand/leitstand"
 
 ######################## Banner call to action ############################
 banner_cta:

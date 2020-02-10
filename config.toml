@@ -137,10 +137,10 @@ title = "Reply AG"
 link = "#"
 
 #################### social icon ######################################
-[[params.social]]
+[params.github]
 name = "Github"
 icon = "ti-github"
-link = "#"
+link = "https://github.com/leitstand/leitstand"
 
 ########################### English language ###########################
 [Languages.en]

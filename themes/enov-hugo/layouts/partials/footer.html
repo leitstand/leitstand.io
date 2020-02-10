@@ -43,7 +43,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
           <div class="copyright">
-            <p>{{ .Site.Params.copyright | safeHTML }}<a target="_blank" class='text-light' href='{{ "/privacy-policy" | absURL }}'>Data privacy information</a> - <a target="_blank" class='text-light' href='{{ "/terms-of-service" | absURL }}'>Terms of Service</a></p>
+            <p>{{ .Site.Params.copyright | safeHTML }}<a target="_blank" class='text-light' href='{{ "/privacy-policy" | relURL }}'>Data privacy information</a> - <a target="_blank" class='text-light' href='{{ "/terms-of-service" | relURL }}'>Terms of Service</a></p>
           </div>
         </div>
       </div>

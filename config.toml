@@ -128,19 +128,19 @@ title = "Deutsche Telekom AG"
 link = "https://www.telekom.com/en"
 
 [[params.clients]]
-logo = "images/rtbrick.svg"
-title = "RtBrick"
-link = "https://www.rtbrick.com/"
-
-[[params.clients]]
 logo = "images/ewe-logo.svg"
 title = "EWE AG"
-link = "#"
+link = "https://www.ewe.com/en"
 
 [[params.clients]]
 logo = "images/Logo_Reply-01.svg"
 title = "Reply AG"
-link = "#"
+link = "https://www.reply.com/en"
+
+[[params.clients]]
+logo = "images/rtbrick.svg"
+title = "RtBrick Inc."
+link = "https://www.rtbrick.com"
 
 #################### social icon ######################################
 [params.github]
@@ -156,4 +156,4 @@ contentDir = "content/english"
 weight = 1
 home = "Home"
 # copyright
-copyright = "RtBrick Inc ©​​ 2020​ - <a class='text-light' href='/privacy-policy'>Data privacy information</a> - <a class='text-light' href='/terms-of-service'>Terms of Service</a>"
+copyright = ""

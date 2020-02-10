@@ -21,7 +21,7 @@
           <ul class="list-unstyled col footer-menu row lh-35 mb-0">
             {{ range .Site.Params.clients }}
             <li class="col-6">
-            <a href="{{ .link | absURL }}">
+            <a target="_blank" href="{{ .link | absURL }}">
               {{ .title }}
             </a>
             </li>
@@ -33,7 +33,7 @@
         <div class="">
           <p class="text-capitalize mb-1 text-white">For technical Questions visit us on:</p>
           <ul class="list-unstyled footer-socials mb-0">
-            <li><a href="{{ .Site.Params.Github.link | safeURL }}"><i class="{{ .Site.Params.Github.icon }} mr-2 text-muted"></i>{{ .Site.Params.Github.name }}</a></li>
+            <li><a target="_blank" href="{{ .Site.Params.Github.link | safeURL }}"><i class="{{ .Site.Params.Github.icon }} mr-2 text-muted"></i>{{ .Site.Params.Github.name }}</a></li>
           </ul>
         </div>
       </div>
@@ -43,7 +43,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
           <div class="copyright">
-            <p>{{ .Site.Params.copyright | safeHTML }}</p>
+            <p>{{ .Site.Params.copyright | safeHTML }}<a target="_blank" class='text-light' href='{{ "/privacy-policy" | absURL }}'>Data privacy information</a> - <a target="_blank" class='text-light' href='{{ "/terms-of-service" | absURL }}'>Terms of Service</a></p>
           </div>
         </div>
       </div>

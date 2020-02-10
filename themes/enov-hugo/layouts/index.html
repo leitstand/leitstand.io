@@ -20,7 +20,7 @@
 
           {{ if .button_border.enable }}
           {{ with .button_border }}
-          <a href="{{ .link | absLangURL }}" class="btn btn-solid-border animated fadeInUp">{{ .label }}<i class="btn-icon ti-angle-right ml-2"></i></a>
+          <a href="{{ .link | absLangURL }}" target="_blank" class="btn btn-solid-border animated fadeInUp">{{ .label }}<i class="btn-icon ti-angle-right ml-2"></i></a>
           {{ end }}
           {{ end }}
         </div>
@@ -288,9 +288,9 @@
     </div>
     <div class="row">
       {{ range .Site.Params.clients }}
-      <div class="col-lg-3 col-md-4 col-sm-6 col-6 mx-auto p-5 d-flex align-items-center">
+      <a target="_blank" href="{{ .link | absURL }}" class="col-lg-3 col-md-4 col-sm-6 col-6 mx-auto p-5 d-flex align-items-center">
         <img src="{{ .logo | absURL }}" alt="logo" class="img-fluid w-100">
-      </div>
+      </a>
       {{ end }}
     </div>
   </div>
@@ -306,7 +306,10 @@
         <div class="form-success alert alert-success d-none">Your message was sent successfully.</div>
         <div class="form-error alert alert-danger d-none">We encountered a problem while sending your message.</div>
         <form class="contact__form" method="post" action="{{ .Site.Params.contact_form_action }}">
-          <h3 class="text-md mb-5 text-white">Contact Us</h3>
+          <h3 class="text-md mb-0 text-white">
+            Contact Us
+          </h3>
+          <p class="mb-5 text-light d-block">The Leitstand community welcomes new members!</p>
           <div class="form-group">
             <input name="name" type="text" class="form-control"  placeholder="Your Name">
           </div>
@@ -318,7 +321,7 @@
           </div>
           <div class="form-group form-check text-left text-white">
             <input id="accept_privacy" name="email" type="checkbox" class="form-check-input" required>
-            <label class="form-check-label" for="accept_privacy">I accept the <a class="text-light text-underline" target="_blank" href="/privacy-policy"><u>privacy provisions</u></a></label>
+            <label class="form-check-label" for="accept_privacy">I accept the <a class="text-light text-underline" target="_blank" href='{{ "/privacy-policy" | absURL }}'><u>privacy policy</u></a></label>
           </div>
           <button class="btn btn-main g-recaptcha" data-callback='onContactSubmit' data-size="invisible" data-sitekey="{{.Site.Params.captcha.site_key}}">Send Message</button>
         </form>

@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = ""
+baseURL = "https://schaeckreply.github.io/leitstand.io/"
 title = "Leitstand | OSS for disaggregated networks"
 theme = "enov-hugo"
 # post pagination

@@ -339,6 +339,7 @@ a:focus {
   background: $primary-color !important;
 }
 
+.grecaptcha-badge { visibility: hidden; }
 
 
 @include mobile-xs {

@@ -322,8 +322,15 @@
           </div>
           <div class="form-group form-check text-left text-white">
             <input id="accept_privacy" name="accept_privacy" type="checkbox" class="form-check-input" required>
-            <label class="form-check-label" for="accept_privacy">I accept the <a class="text-light text-underline" target="_blank" href='{{ "privacy-policy" | relURL }}'><u>privacy policy</u></a></label>
+            <label class="form-check-label d-block" for="accept_privacy">
+              I accept the <a class="text-light text-underline" target="_blank" href='{{ "privacy-policy" | relURL }}'><u>privacy policy</u></a>
+            </label>
             <div class="invalid-feedback text-danger"></div>
+            <small class="d-block text-light text-left">
+              This site is protected by reCAPTCHA and the Google
+              <a class="text-light" href="https://policies.google.com/privacy">Privacy Policy</a> and
+              <a class="text-light" href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </small>
           </div>
           <div class="form-success alert mb-3 alert-success">Your message was sent successfully.</div>
           <div class="form-error alert mb-3 alert-danger">We encountered a problem while sending your message.</div>

@@ -233,14 +233,23 @@ $('a[href*="#"]')
   $('form[action^="https://usebasin.com"]').each(function (i, el) {
       var form = $(el);
       form.submit(function (e) {
-        e.preventDefault();
-        console.log("xxXxx");
+          e.preventDefault();
+          e.stopPropagation()
           /* stop the form from submitting */
-          form = $(e.target);
-          console.log(form);
-          return;
+          var form = $(e.target);
+          if (form[0].checkValidity() === false) {
+            form.addClass('was-validated');
+            form.find(':invalid').each(function(index, item){
+              if(!item.checkValidity()){
+                $(item).closest('.form-group').addClass('error');
+                $(item).closest('.form-group').find('.invalid-feedback').addClass('is-error').html(item.validationMessage);
+              }
+            });
+            return;
+          }
           /* get the form's action parameter and add ".json" to the end */
-          action = form.attr('action') + '.json';
+          var action = form.attr('action') + '.json';
+          var parent = $(form.parent());
           /* submit the form via ajax */
           $.ajax({
               url: action,
@@ -250,17 +259,17 @@ $('a[href*="#"]')
               success: function (data) {
                   if (data.success) {
                       /* successful submission - hide the form and show the success message */
-                      parent = $(form.parent());
-                      parent.children('.form-success').css('display', 'block');
+                      form.find('button[type=submit]').css('display', 'none');
+                      form.find('.form-success').css('display', 'block');
                   } else {
                       /* failed submission - log the output to the console and show the failure message */
                       console.log(data);
-                      parent.find('.form-error').css('display', 'block');
+                      form.find('.form-error').css('display', 'block');
                   }
               },
               error: function () {
                   /* failed submission - show the failure message */
-                  parent.find('.form-error').css('display', 'block');
+                  form.find('.form-error').css('display', 'block');
               }
           });
       });
@@ -268,5 +277,7 @@ $('a[href*="#"]')
 })(jQuery);
 
 function onContactSubmit(token) {
+  $('.g-recaptcha').addClass('d-none');
+  $('.g-recaptcha').siblings('button[type=submit].d-none').removeClass('d-none');
   $('#contact form').submit();
 }

@@ -303,27 +303,32 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
-        <div class="form-success alert alert-success d-none">Your message was sent successfully.</div>
-        <div class="form-error alert alert-danger d-none">We encountered a problem while sending your message.</div>
         <form class="contact__form" method="post" action="{{ .Site.Params.contact_form_action }}">
           <h3 class="text-md mb-0 text-white">
             Contact Us
           </h3>
           <p class="mb-5 text-light d-block">The Leitstand community welcomes new members!</p>
           <div class="form-group">
-            <input name="name" type="text" class="form-control"  placeholder="Your Name">
+            <input name="name" type="text" class="form-control" required placeholder="Your Name">
+            <div class="invalid-feedback text-danger"></div>
           </div>
           <div class="form-group">
-            <input name="email" type="email" class="form-control"  placeholder="Email Address">
+            <input name="email" type="email" class="form-control" required placeholder="Email Address">
+            <div class="invalid-feedback text-danger"></div>
           </div>
-          <div class="form-group-2 mb-4">
-            <textarea name="message" class="form-control" rows="4"  placeholder="Your Message"></textarea>
+          <div class="form-group-2 mb-2">
+            <textarea name="message" class="form-control" rows="4" required placeholder="Your Message"></textarea>
+            <div class="invalid-feedback text-danger"></div>
           </div>
           <div class="form-group form-check text-left text-white">
-            <input id="accept_privacy" name="email" type="checkbox" class="form-check-input" required>
+            <input id="accept_privacy" name="accept_privacy" type="checkbox" class="form-check-input" required>
             <label class="form-check-label" for="accept_privacy">I accept the <a class="text-light text-underline" target="_blank" href='{{ "privacy-policy" | relURL }}'><u>privacy policy</u></a></label>
+            <div class="invalid-feedback text-danger"></div>
           </div>
-          <button class="btn btn-main g-recaptcha" data-callback='onContactSubmit' data-size="invisible" data-sitekey="{{.Site.Params.captcha.site_key}}">Send Message</button>
+          <div class="form-success alert mb-3 alert-success">Your message was sent successfully.</div>
+          <div class="form-error alert mb-3 alert-danger">We encountered a problem while sending your message.</div>
+          <button class="btn btn-main g-recaptcha" type="submit" data-callback='onContactSubmit' data-size="invisible" data-sitekey="{{.Site.Params.captcha.site_key}}">Send Message</button>
+          <button class="btn btn-main d-none" type="submit">Send Message</button>
         </form>
       </div>
     </div>

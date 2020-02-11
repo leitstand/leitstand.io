@@ -255,7 +255,9 @@ input[type="tel"] {
   color: $black;
 }
 
-
+.text-danger, .was-validated .form-check-input:invalid~.form-check-label{
+  color: #ff939e !important;
+}
 
 .text-sm {
   font-size: 14px;

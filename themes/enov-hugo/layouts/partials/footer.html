@@ -2,7 +2,7 @@
 <footer class="footer py-3">
   <div class="container">
     <div class="row align-items-end">
-      <div class="col-lg-4 ml-auto col-sm-6">
+      <div class="col-xl-4 col-lg-3 col-12 ml-auto text-lg-left text-center my-4 my-lg-0">
         <div class=" footer-menu mt-2">
           <a class="d-block" href="{{ .Site.Params.homeURL | relLangURL }}">
             {{ if .Site.Params.logo_svg }}
@@ -11,17 +11,17 @@
               <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}" class="img-fluid">
             {{ end }}
           </a>
-          <a class="ml-4" href="https://raw.githubusercontent.com/leitstand/leitstand/master/LICENSE">Leitstand Project Licensing Information</a>
+          <a class="ml-xl-4 ml-lg-3 text-light d-block" href="https://raw.githubusercontent.com/leitstand/leitstand/master/LICENSE">Leitstand Project Licensing Information</a>
         </div>
       </div>
 
-      <div class="col-lg-5 col-md-6 col-sm-6">
+      <div class="col-xl-5 col-lg-6 col-12 text-lg-left text-center my-4 my-lg-0">
         <div class=" text-white d-flex flex-wrap align-items-baseline">
           <p class="text-capitalize mb-0 col-auto text-white"></p>
-          <ul class="list-unstyled col footer-menu row lh-35 mb-0">
+          <ul class="list-unstyled mx-auto footer-menu row lh-35 mb-0">
             {{ range .Site.Params.clients }}
-            <li class="col-6">
-            <a target="_blank" href="{{ .link | absURL }}">
+            <li class="col-auto col-lg-6 d-inline mx-auto">
+            <a target="_blank" class="text-light" href="{{ .link | absURL }}">
               {{ .title }}
             </a>
             </li>
@@ -29,17 +29,20 @@
           </ul>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="">
-          <p class="text-capitalize mb-1 text-white">For technical Questions visit us on:</p>
+      <div class="col-lg-3 col-12 text-lg-left text-center my-4 my-lg-0">
+        <div class="text-light">
+          <p class="text-capitalize mb-1 text-white">Technical Questions?</p>
+          <a class="text-light" target="_blank" href="{{ .Site.Params.Github.link | safeURL }}/issues"><i class="{{ .Site.Params.Github.icon }} mr-2 text-muted"></i>{{ .Site.Params.Github.name }}</a>
+          <span class="px-1">|</span>
+          <a class="text-light" target="_blank" href="{{ .Site.Params.Github.link | safeURL }}/issues">Report Issue or find Help</a>
           <ul class="list-unstyled footer-socials mb-0">
-            <li><a target="_blank" href="{{ .Site.Params.Github.link | safeURL }}"><i class="{{ .Site.Params.Github.icon }} mr-2 text-muted"></i>{{ .Site.Params.Github.name }}</a></li>
+            <li></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="footer-btm pt-4 pb-3">
+    <div class="footer-btm pt-4 pb-3 my-4">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
           <div class="copyright">

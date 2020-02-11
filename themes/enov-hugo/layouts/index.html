@@ -184,7 +184,7 @@
     <div class="row justify-content-center">
       {{ range $index, $element:=  first 6 $data.service.services }}
       {{ $delay := mul $index 100 }}
-      <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
         <div class="card mb-4 p-5 text-center" data-aos="fade-up" data-aos-delay="{{ $delay }}">
           <i class="{{ if not .icon_svg }}{{ .icon }}{{ end }} text-color text-lg">{{ if .icon_svg }}{{ .icon | absURL}}{{ end }}</i>
           <h4 class="mb-3 mt-4">{{ .title | markdownify }}</h4>
@@ -328,8 +328,8 @@
             <div class="invalid-feedback text-danger"></div>
             <small class="d-block text-light text-left">
               This site is protected by reCAPTCHA and the Google
-              <a class="text-light" href="https://policies.google.com/privacy">Privacy Policy</a> and
-              <a class="text-light" href="https://policies.google.com/terms">Terms of Service</a> apply.
+              <a class="text-light" target="_blank" href="https://policies.google.com/privacy">Privacy Policy</a> and
+              <a class="text-light" target="_blank" href="https://policies.google.com/terms">Terms of Service</a> apply.
             </small>
           </div>
           <div class="form-success alert mb-3 alert-success">Your message was sent successfully.</div>

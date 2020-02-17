@@ -275,14 +275,14 @@
 {{ end }}
 
 <!-- clients -->
-{{ if $data.about.clients_logo.enable }}
+{{ if $data.homepage.clients_logo.enable }}
 <section id="members" class="container">
   <div class="section">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
         <div class="section-title">
-          <h2 class="mb-4">Who is involved?</h2>
-          <p>The Leitstand initiative was launched at Mobile World Congress in February, 2020. Founding contributors included Deutsche Telekom, RtBrick, EWETel and Reply.</p>
+          <h2 class="mb-4">{{ $data.homepage.clients_logo.title }}</h2>
+          <p>{{ $data.homepage.clients_logo.message }}</p>
         </div>
       </div>
     </div>

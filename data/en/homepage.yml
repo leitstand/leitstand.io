@@ -131,6 +131,13 @@ service:
   content : "In the past, equipment providers developed bespoke management systems to assist carriers in operating their networks. Although common protocols and interfaces emerged, these tools were usually optimized for the vendors’ own equipment. This resulted in inefficient use of development resources within equipment vendors and complex integration challenges for carriers operating multi-vendor networks.\n\nBy providing the operational toolset on an open-source basis, Leitstand will increase the efficiency of producing, maintaining and enhancing carriers’ operational tools and processes, for both the vendors and the carriers."
   # service item comes from "data/**/service.yml" file
 
+######################### clients logo ##################################
+clients_logo:
+  enable : true
+  title: "Who is involved?"
+  message: "The Leitstand initiative was launched in February, 2020. Founding contributors included Deutsche Telekom, EWETel, Reply and RtBrick."
+  # clients logo comes from "config.toml" file.
+
 ######################### pricing #####################################
 pricing:
   enable : false

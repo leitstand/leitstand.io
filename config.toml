@@ -83,14 +83,14 @@ logo = '<svg id="Layer_1" height="65px" data-name="Layer 1" xmlns="http://www.w3
 # top header
 top_header = false
 # Meta data
-description = "This is meta description"
+description = "Carrier operations at webscale, freely available."
 author = ""
 # contact info
 address = ""
 phone = ""
 email = ""
 # contact form action
-contact_form_action = "https://usebasin.com/f/81db9efb0aa7" # contact form works with https://formspree.io
+contact_form_action = "https://usebasin.com/f/675e8a78015c" # contact form works with https://formspree.io
 # Google Analitycs
 google_analitycs_id = "" # your id
 # search

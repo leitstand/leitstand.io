@@ -83,7 +83,7 @@ logo = '<svg id="Layer_1" height="65px" data-name="Layer 1" xmlns="http://www.w3
 # top header
 top_header = false
 # Meta data
-description = "Carrier operations at webscale, freely available."
+description = "Leitstand is an open-sourced network management solution for carrier-scale networks built from disaggregated software and hardware systems."
 author = ""
 # contact info
 address = ""
